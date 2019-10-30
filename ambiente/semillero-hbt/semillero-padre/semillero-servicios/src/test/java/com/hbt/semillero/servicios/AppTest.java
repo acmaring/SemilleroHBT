@@ -3,6 +3,8 @@ package com.hbt.semillero.servicios;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.hbt.semillero.entidades.EstadoEnum;
+
 
 public class AppTest {
 
@@ -37,6 +39,11 @@ public class AppTest {
 		
 		return cadenaInvertida;
 	}
+	
+	//TODO
+	/*
+	 * Pendiente hacer un metodo que use el metodo ToString de la entidad COMIC
+	 */
 	
 	//test para verificar inicialmente que se tiene la misma cantidad de caracteres
 	@Test
@@ -84,23 +91,66 @@ public class AppTest {
 	}
 	
 	//test para verificar que la cadena invertida tiene los mismos caracteres que la cadena original
-		@Test
-		public void invertirCadenaTestCase3() {
-			String cadenaTest = "hola";
-			String cadenaInvertidaTest;
-			String cadenaOriginal = "";
-			
-			cadenaInvertidaTest = invertirCadena(cadenaTest);
-			
-			for (int x = cadenaInvertidaTest.length() - 1; x >= 0; x--) {
-				cadenaOriginal = cadenaOriginal + cadenaInvertidaTest.charAt(x);
-			}
-			
-			//Valor de la cadena verificada para que falle el caso
-			//StringBuilder nuevaCadenaOriginal = new StringBuilder(cadenaOriginal);
-			//nuevaCadenaOriginal.setCharAt(1, 'a');
-			//cadenaOriginal = nuevaCadenaOriginal.toString();
-			
-			Assert.assertEquals(cadenaOriginal, cadenaTest);
+	@Test
+	public void invertirCadenaTestCase3() {
+		String cadenaTest = "hola";
+		String cadenaInvertidaTest;
+		String cadenaOriginal = "";
+		
+		cadenaInvertidaTest = invertirCadena(cadenaTest);
+		
+		for (int x = cadenaInvertidaTest.length() - 1; x >= 0; x--) {
+			cadenaOriginal = cadenaOriginal + cadenaInvertidaTest.charAt(x);
 		}
+		
+		//Valor de la cadena verificada para que falle el caso
+		//StringBuilder nuevaCadenaOriginal = new StringBuilder(cadenaOriginal);
+		//nuevaCadenaOriginal.setCharAt(1, 'a');
+		//cadenaOriginal = nuevaCadenaOriginal.toString();
+		
+		Assert.assertEquals(cadenaOriginal, cadenaTest);
+	}
+	
+	//test para verificar inicialmente que se tiene la misma cantidad de caracteres
+	@Test
+	public void EstadoEnumTest() {
+		
+		/*
+		 * Intanciar clase EstadoEnum
+		 */
+		EstadoEnum estadoEnumActivo = EstadoEnum.ACTIVO;
+		EstadoEnum estadoEnumInactivo = EstadoEnum.INACTIVO;
+		String cadenaActivo;
+		String cadenaInactivo;
+		int posicionEnum;
+		EstadoEnum[] arregloValores;
+		
+		
+		
+		/*
+		 * Devolver un String con el nombre de la constante (ACTIVO)
+		 * Devolver un String con el nombre de la constante (INACTIVO)
+		 * Devolver un entero con la posición del enum según está declarada
+		 * Comparar el enum con el parámetro según el orden en el que están declarados lo enum
+		 * Devolver un array que contiene todos los enum
+		 */
+		
+		//System.out.println("String estado Activo:" + estadoEnum.name());
+		cadenaActivo = estadoEnumActivo.name();
+		cadenaInactivo = estadoEnumInactivo.name();
+		posicionEnum = estadoEnumActivo.ordinal();
+		arregloValores = EstadoEnum.values();
+		
+		/*
+		 * Compara el string con el nombre de la constante ACTIVO
+		 */
+		Assert.assertEquals(cadenaActivo, "ACTIVO");
+		
+		/*
+		 * Compara el string con el nombre de la constante INACTIVO
+		 */
+		Assert.assertEquals(cadenaActivo, "INACTIVO");
+		
+		Assert.assertEquals(posicionEnum, 1);
+	}
 }
