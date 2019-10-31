@@ -10,5 +10,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './bienvenida-component.html',
 })
 export class BienvenidaComponent {
+  constructor(){
+    console.log("enyto al componete bienvenida");
+  }
 
+  ngOnInit(): void {
+    console.log("entro al evenro on init del componente bienvenida")
+  }
 }
