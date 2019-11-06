@@ -1,14 +1,14 @@
 /**
- * @description Clase ComicDTO que contiene la informacion de un comic
+ * @description Clase libro que contiene la informacion de un libro
  * 
- * @author Diego Fernando Alvarez Silva <dalvarez@heinsohn.com.co>
+ * @author Diego Fernando Alvarez Silva <camilo93maring@gmail.com>
  */
-export class ComicDTO {
+export class LibroDTO {
 
     /**
     * Indicador de resultado.
     */
-    public id: string;
+    public id: number;
 
     /**
     * Indicador de resultado.
@@ -28,11 +28,6 @@ export class ComicDTO {
     /**
     * Indicador de resultado.
     */
-    public coleccion: string;
-
-    /**
-    * Indicador de resultado.
-    */
     public numeroPaginas: number;
 
     /**
@@ -48,7 +43,7 @@ export class ComicDTO {
     /**
     * Indicador de resultado.
     */
-    public color: boolean;
+    public aColor: boolean;
 
     /**
     * Indicador de resultado.
@@ -59,12 +54,5 @@ export class ComicDTO {
     * Indicador de resultado.
     */
     public estado: string;
-
-    /**
-    * Indicador de resultado.
-    */
-    public cantidad: number;
-
-    public cantidadLista : Array<number>;
   
 }

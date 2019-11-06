@@ -7,7 +7,7 @@ import { MiPrimerComponente } from './semillero/componentes/miPrimerComponente/m
 const routes: Routes = [
   { path: 'gestionar-comic', component: GestionarComicComponent },
   { path: 'bienvenida', component: BienvenidaComponent },
-  { path: 'mi-primer-componente', component: MiPrimerComponente }
+  { path: 'mi-primer-componente', component: MiPrimerComponente },
   
 ];
 
