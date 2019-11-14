@@ -39,7 +39,7 @@ public class Comic implements Serializable{
     
     private String editorial;
     
-    private String tematicaEnum;
+    private TematicaEnum tematicaEnum;
     
     private String coleccion;
     
@@ -53,7 +53,7 @@ public class Comic implements Serializable{
     
     private LocalDate fechaVenta;
     
-    private String estadoEnum;
+    private EstadoEnum estadoEnum;
     
     private Long cantidad;
     
@@ -80,7 +80,7 @@ public class Comic implements Serializable{
 
 	/**
 	 * Metodo encargado de modificar el valor del atributo id
-	 * @param id El nuevo id a modificar.
+	 * @param l El nuevo id a modificar.
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -127,15 +127,15 @@ public class Comic implements Serializable{
 	 */
 	@Column(name="SCTEMATICAENUM")
 	@Enumerated(value = EnumType.STRING)
-	public String getTematicaEnum() {
+	public TematicaEnum getTematicaEnum() {
 		return tematicaEnum;
 	}
 
 	/**
 	 * Metodo encargado de modificar el valor del atributo tematicaEnum
-	 * @param tematicaEnum El nuevo tematicaEnum a modificar.
+	 * @param tematicaEnum2 El nuevo tematicaEnum a modificar.
 	 */
-	public void setTematicaEnum(String tematicaEnum) {
+	public void setTematicaEnum(TematicaEnum tematicaEnum) {
 		this.tematicaEnum = tematicaEnum;
 	}
 
@@ -247,7 +247,7 @@ public class Comic implements Serializable{
 	 */
 	@Column(name="SCESTADOENUM")
 	@Enumerated(value = EnumType.STRING)
-	public String getEstadoEnum() {
+	public EstadoEnum getEstadoEnum() {
 		return estadoEnum;
 	}
 
@@ -255,7 +255,7 @@ public class Comic implements Serializable{
 	 * Metodo encargado de modificar el valor del atributo estadoEnum
 	 * @param estadoEnum El nuevo estadoEnum a modificar.
 	 */
-	public void setEstadoEnum(String estadoEnum) {
+	public void setEstadoEnum(EstadoEnum estadoEnum) {
 		this.estadoEnum = estadoEnum;
 	}
 

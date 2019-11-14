@@ -162,7 +162,7 @@ public class AppTest {
 	}
 
 	// Prueba para POJO crearComicDTO
-	@Test
+	@Test(enabled = false)
 	public void crearComiDTOTest() {
 
 		GestionarComicPOJO gestionarComiPOJO = new GestionarComicPOJO();
@@ -173,7 +173,7 @@ public class AppTest {
 		Assert.assertTrue(!gestionarComiPOJO.getListaComics().isEmpty());
 	}
 
-	@Test
+	@Test(enabled = false)
 	public void crearComicDTOListaTest() {
 		GestionarComicPOJO gestionarComicPOJO = new GestionarComicPOJO();
 
@@ -225,9 +225,26 @@ public class AppTest {
 	}
 
 	// Prueba para agregar comicDTO
-	@Test
+	@Test(enabled = false)
 	public void agregrarComicDTOListaTest() {
 
+	}
+	
+	@Test(enabled = false)
+	public void compararCadenaTest() {
+		
+		String s1 = "street";
+		String s2;
+		s2 = new String("street");
+		
+		//Con objetos no utilizar ==, mejor utilizar metodos
+		if (s1 == s2) {
+			Assert.assertEquals(s2, s1);
+		}
+		
+		if (s1.equals(s2)) {
+			Assert.assertEquals(s2, s1);
+		}
 	}
 
 }

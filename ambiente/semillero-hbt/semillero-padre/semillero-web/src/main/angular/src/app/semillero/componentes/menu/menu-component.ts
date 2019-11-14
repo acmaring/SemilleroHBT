@@ -47,12 +47,4 @@ export class MenuComponent implements OnInit {
   public navegarGestionarCompra(): void {
     //WIP
   }
-
-  /**
-   * @description Metodo encargado de direccionar al componente de mi primer componente
-   * @author Andres Camilo Marin Gonzalez <camilo93maring@gmail.com>
-   */
-  public navegarMiPrimerComponente(): void {
-    this.router.navigate(['mi-primer-componente']);
-  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 /**
  * @description Componente bienvenida, el cual contiene la imagen de bienvenida al semillero
@@ -9,19 +10,25 @@ import { Component, OnInit } from '@angular/core';
   selector: 'bienvenida',
   templateUrl: './bienvenida-component.html',
 })
-export class BienvenidaComponent {
-
-  public urlImagen: string;
-  constructor(){
-    console.log("enyto al componete bienvenida");
+export class BienvenidaComponent implements OnInit {
+  
+  public urlImagen : string;
+  
+  constructor(private router : Router, private activatedRoute: ActivatedRoute) {
+    console.log("entro al constructor del componente bienvenida");
   }
 
   ngOnInit(): void {
     this.urlImagen = "https://www.elempleo.com/sitios-empresariales/colombia/heinsohn-business-technology/img/elempleo-02.jpg";
-    console.log("entro al evenro on init del componente bienvenida")
+    let data = this.activatedRoute.snapshot.params;
+    
+    console.log("Parametros recibidos " + data);
+    
   }
 
-  public ejecucionEventoClick(parametroEvento : any) : void {
-    alert("Hola" + parametroEvento);
+  public ejecucionEventoClick( parametroEvento : any, numero : number ) : void {
+    alert("Hola: " + parametroEvento + ' ' + numero);
+    
   }
+
 }

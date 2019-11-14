@@ -2,126 +2,102 @@ import { Component, OnInit } from '@angular/core';
 import { ComicDTO } from '../../dto/comic.dto';
 
 /**
- * @description la clase CrearPersonaComponent permite crear personas
- * @author Andres Camilo Marin Gonzalez <camilo93maring@gmail.com>
+ * @description La clase CrearPersonaComponent permite crear personas
+ * @author Diego Fernando Alvarez Silva <dalvarez@heinsohn.com.co>
  */
 @Component({
     selector: 'crear-persona',
     templateUrl: './crear-persona-component.html'
-  })
-
+})
 export class CrearPersonaComponent implements OnInit{
     
-  private nombreInstructorGlobalPrivado : string;
-  public nombreInstructorGlobalPublic : string;
-  public comicDTO : ComicDTO;
+    private nombreInstructorGlobalPrivado : string;
+    public nombreInstructorGlobalPublic : string;
 
-  /**
-   * Valiable global
-   */
-  public miVariableGlobal : any = {};
+    public listaApellidos : Array<any> = new Array<any>();
+    public listaNombres = null;
 
-  /** 
-   * define un array
-   */
-  public listaApellidos : Array<any>;
-  /**
-   * No recomendado para definir array
-   */
-  public listaNombres = [];
-  
-  /**
-   * OnInit para inicializar variables
-   */
-  ngOnInit(): void {
-    //Aqui se declarn las variables globales
-    this.listaApellidos = new Array<any>();
+    public comicDTO : ComicDTO;
 
-    this.nombreInstructorGlobalPrivado = "Semillero2019";
-    this.inicializarComponente();
-    let nombreInstructor = "Camilo Marin";
-    let nombreInstructorString : string = "Camilo Marin";
-    console.log("Nombre instructor: " + nombreInstructor);
-    console.log("Nombre instructor: " + nombreInstructorString);
-    this.miVariableGlobal.genero = "Masculino";
+    ngOnInit() : void {
+        this.nombreInstructorGlobalPrivado = "Semillero2019";
+        this.inicializarComponente();
 
-    let miVariable : any = {
-      id : 1,
-      nombre: "Camilo",
-      direccion : "Carera 23 #70 - 01",
-      colores : [1,2,3,4,5,6,7]
+
+        let nombreInstructor = "Diego Alvarez";
+        let nombreInstructorString : string = "Diego Alvarez string";
+        console.log("nombreInstructor: " + nombreInstructor);
+        console.log("nombreInstructorString: " + nombreInstructorString);
+
+
+        let miVarible : any = {
+            id : 1,
+            nombre : "Carlos",
+            direccion : "Carrera 21 XXX",
+            colores : [1,2,3,4,5]
+        };
+        miVarible.genero = "Masculino";
+        delete miVarible.genero;
+
+        this.listaApellidos.push(miVarible);
+        
+
+        
+        //alert("Longitud de la lista:" + this.listaNombres.length);
+
+        let miVariable : number = 100.23;
+        let variableString : string  = 'semillero2019';
+
+        let miVariableBoolean : boolean = true;
+
+        let miMapa : Map<string,string>;
+        miMapa = new Map<string,string>();
+        
+        miMapa.set("1", "semillero");
+        miMapa.get("1");
+        let mifecha = new Date();
+        
+        console.log(mifecha);
+
+        let lista = this.listaApellidos;
+        for (let i = 0; i < lista.length; i++) {
+            const element = lista[i];
+            console.log(element);
+            
+        }
+
+        lista.forEach(element => {
+            console.log(element);
+        });
+
+        lista.map(objeto => {
+            console.log(objeto);
+        });
+
+        
+
     }
-    miVariable.genero = "Masculino";
 
-    this.listaApellidos.push(miVariable);
-    this.listaApellidos.splice(1,2);
+    public inicializarComponente() : Array<string> {
+        let retorno : any;
+        let objeto = undefined;
+        if(objeto !== null && objeto !== undefined ){
+            console.log("No es nulo");
+        } else {
+            console.log("Si es nulo");
+        }
 
-    this.listaApellidos = [];
-    alert("Longitud listaNombres" + this.listaNombres.length);
+        console.log(1 == 1);
+//        console.log("1" == 1);
+        console.log(1 === 1);
+  //      console.log("1" === 1);
 
-    let miVariableNumber : number = 100.23;
-    let miVariableString : string = "Semillero 2019";
-
-    let miMapa = new Map<string, string>();
-
-    miMapa.set("1", "semillero");
-    miMapa.get("1");
-    let miFecha = new Date();
-
-    console.log(miFecha);
-
-    for (let i = 0; i < this.listaApellidos.length; i++) {
-      const element = this.listaApellidos[i];
-      console.log(element);
-      
+        this.comicDTO = new ComicDTO();
+        this.comicDTO.autores = "Pablito";
+        this.comicDTO.fechaVenta = new Date();
+        console.log(this.comicDTO.autores);
+        
+        
+        return retorno;
     }
-
-    
-    this.listaApellidos.forEach(element => {
-      console.log(element);
-    });
-
-    this.listaApellidos.map(objeto => {
-        console.log(objeto);
-    });
-
-    this.listaApellidos;
-
-  }
-
-  //metodo original
-  /*public inicializarComonente() : Array<string> {
-    let retorno;
-    let objeto = undefined;
-    this.nombreInstructorGlobalPrivado = "Semillero2019";
-
-
-
-    return retorno;
-  }
-  */
-
-  
-
-  public inicializarComponente() : Array<string> {
-  let retorno : any;
-  let objeto = undefined;
-  if(objeto !== null && objeto !== undefined){
-      console.log("No es nulo")
-  } else {
-      console.log("Si es nulo");
-  }
-
-  console.log(1 == 1);
-  // console.log("1" == 1);
-  console.log(1 === 1);
-  // console.log("1" === 1);
-
-  this.comicDTO = new ComicDTO();
-  this.comicDTO.autores = "Camilo Marin";
-
-  
-
-  return retorno;
-}
 }

@@ -65,6 +65,5 @@ export class ComicDTO {
     */
     public cantidad: number;
 
-    public cantidadLista : Array<number>;
   
 }
